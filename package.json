@@ -1,0 +1,40 @@
+{
+  "name": "swisscodes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@emotion/core": "^10.0.27",
+    "@mdx-js/mdx": "^1.5.5",
+    "@mdx-js/react": "^1.5.5",
+    "@sindresorhus/slugify": "^0.9.1",
+    "gatsby": "^2.18.25",
+    "gatsby-image": "^2.2.39",
+    "gatsby-plugin-manifest": "^2.2.37",
+    "gatsby-plugin-mdx": "^1.0.67",
+    "gatsby-plugin-react-helmet": "^3.1.21",
+    "gatsby-plugin-react-svg": "^3.0.0",
+    "gatsby-plugin-sharp": "^2.3.13",
+    "gatsby-plugin-theme-ui": "^0.2.53",
+    "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-transformer-sharp": "^2.3.13",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1",
+    "theme-ui": "^0.2.52",
+    "typeface-inter": "^3.11.2"
+  },
+  "devDependencies": {
+    "esm": "^3.2.25",
+    "prettier": "^1.18.2"
+  },
+  "scripts": {
+    "clean": "rm -r .cache",
+    "build": "npx --node-arg '-r esm' gatsby build",
+    "develop": "npx --node-arg '-r esm' gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "npx --node-arg '-r esm' gatsby serve",
+    "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
+  }
+}
