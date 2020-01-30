@@ -1,6 +1,5 @@
-import path from "path"
-import slugify from "@sindresorhus/slugify"
-// const wrapPageElement
+const path = require("path")
+const slugify = require("@sindresorhus/slugify")
 
 exports.onCreateWebpackConfig = ({ stage, actions }) => {
   actions.setWebpackConfig({
@@ -13,7 +12,7 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
   })
 }
 
-export const onCreateNode = ({ node, actions }) => {
+exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === "Mdx") {
     createNodeField({
@@ -24,7 +23,7 @@ export const onCreateNode = ({ node, actions }) => {
   }
 }
 
-export const createPages = async ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
   const postTemplate = path.resolve(`src/ui/templates/post.js`)
   const result = await graphql(`
