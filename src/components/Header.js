@@ -51,6 +51,11 @@ const Header = () => {
         </Link>
         <ul sx={sxHeroNav}>
           <li sx={sxHeroNavItem}>
+            <Link sx={sxHeroNavLink} to="/about">
+              About
+            </Link>
+          </li>
+          <li sx={sxHeroNavItem}>
             <Link sx={sxHeroNavLink} to="/blog">
               Blog
             </Link>
@@ -58,11 +63,6 @@ const Header = () => {
           <li sx={sxHeroNavItem}>
             <Link sx={sxHeroNavLink} to="/projects">
               Projects
-            </Link>
-          </li>
-          <li sx={sxHeroNavItem}>
-            <Link sx={sxHeroNavLink} to="/about">
-              About
             </Link>
           </li>
           <li sx={sxHeroNavItem}>
