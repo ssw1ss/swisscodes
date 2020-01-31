@@ -3,6 +3,7 @@ import { jsx } from "theme-ui"
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 
+import PostListing from "../components/PostListing"
 import Logo from "assets/images/logo.svg"
 import HeroImage from "assets/images/hero-image.svg"
 
@@ -14,10 +15,8 @@ const sxHero = {
   position: "relative",
   py: [8, 9],
   px: [6, 0, 0, 8],
-  width: ["100%", "30rem", "32rem", "49rem"],
-  my: 0,
   mx: ["auto", "auto", "auto", 0],
-  backgroundSize: "200px"
+  width: ["100%", "27.5rem", "37rem", "49rem"]
 }
 const sxHeroImage = {
   display: ["none", "none", "none", "none", "block"],
@@ -32,7 +31,6 @@ const sxLogo = {
   mb: [6, 7]
 }
 const sxHeroCopy = {
-  fontSize: [".675rem", ".825rem", ".875rem", "1rem"],
   mb: [6, 7]
 }
 const sxHeroNav = {
@@ -40,7 +38,6 @@ const sxHeroNav = {
   listStyle: "none",
   m: 0,
   p: 0,
-  fontSize: [null, null, "1.1rem", "1.2rem"],
   fontWeight: "semibold"
 }
 const sxHeroNavItem = {
@@ -60,10 +57,7 @@ const sxHeroNavLink = {
 }
 
 const sxPostsSection = {
-  px: [6],
-  py: [null, 9],
-  mx: "auto",
-  width: ["100%", "30rem", "32rem", "49rem"]
+  variant: "layout.container"
 }
 const sxPostsHeader = {
   display: "flex",
@@ -82,8 +76,8 @@ const sxPostDate = {
   textTransform: "uppercase",
   letterSpacing: ".05rem"
 }
-const sxPostTitle = { variant: "text.h1", lineHeight: "1.05", mt: 1, mb: 2 }
-const sxPostLink = { color: "primary", fontSize: "1.1rem" }
+const sxPostTitle = { variant: "text.h1", lineHeight: "1.05", my: 1 }
+const sxPostLink = { color: "primary", fontSize: 1 }
 
 const PostLink = ({
   post: {
@@ -116,10 +110,7 @@ const Index = () => {
       }
     }
   `)
-
-  const posts = data.allMdx.nodes.map(post => (
-    <PostLink key={post.id} post={post} />
-  ))
+  const postList = data.allMdx.nodes
   return (
     <>
       <div sx={sxHeroContainer}>
@@ -139,8 +130,8 @@ const Index = () => {
           </div>
           <ul sx={sxHeroNav}>
             <li sx={sxHeroNavItem}>
-              <Link sx={sxHeroNavLink} to="/articles">
-                Articles
+              <Link sx={sxHeroNavLink} to="/blog">
+                Blog
               </Link>
             </li>
             <li sx={sxHeroNavItem}>
@@ -166,13 +157,13 @@ const Index = () => {
         <div sx={sxPostsHeader}>
           <h3 sx={{ variant: "text.h3", color: "gray75" }}>Latest Posts</h3>
           <Link
-            to="/articles"
+            to="/blog"
             sx={{ variant: "links.navigation", color: "gray75" }}
           >
             View All
           </Link>
         </div>
-        <div>{posts}</div>
+        <PostListing postList={postList} />
       </div>
     </>
   )

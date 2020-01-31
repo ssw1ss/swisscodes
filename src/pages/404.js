@@ -1,7 +1,14 @@
-import React from "react";
+import React from "react"
+
+import Header from "../components/Header"
 
 const ErrorPage = () => {
-  return <div>404 not found</div>;
-};
+  return (
+    <>
+      <Header />
+      <div>404 not found</div>
+    </>
+  )
+}
 
-export default ErrorPage;
+export default ErrorPage

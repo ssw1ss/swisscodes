@@ -9,7 +9,7 @@ const colorsSet = {
   gray50: "rgba(255,255,255,.50)",
   gray10: "rgba(255,255,255,.10)",
   skyblue: "#C5EAFF",
-  black: "#202226"
+  black: "#131519"
 }
 const colors = {
   ...colorsSet,
@@ -19,15 +19,15 @@ const colors = {
 }
 const h1 = {
   ...heading,
-  fontSize: 4
+  fontSize: [2, 3, 4]
 }
 const h2 = {
   ...heading,
-  fontSize: 3
+  fontSize: [1, 2, 3]
 }
 const h3 = {
   ...heading,
-  fontSize: 2
+  fontSize: [0, 1, 2]
 }
 const headings = {
   h1,
@@ -53,7 +53,7 @@ export default {
     "6rem",
     "9rem"
   ],
-  fontSizes: [".875em", "1em", "1.25em", "1.5em", "2em"],
+  fontSizes: [".875rem", "1rem", "1.25rem", "1.5rem", "2rem"],
   fontWeights: {
     medium: "500",
     semibold: "600"
@@ -76,14 +76,12 @@ export default {
       color: "primary"
     }
   },
-  layouts: {
-    fullWidth: {
-      width: "100%"
-    },
+  layout: {
     container: {
-      width: ["90%", "85%", "75%"],
-      maxWidth: "45rem",
-      margin: "0 auto"
+      px: [6, 0],
+      py: [null, 9],
+      mx: "auto",
+      width: ["100%", "30rem", "32rem", "49rem"]
     }
   }
 }
